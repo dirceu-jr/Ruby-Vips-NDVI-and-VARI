@@ -6,7 +6,7 @@ It is a simplified version of my project [tiled-vegetation-indices](https://gith
 
 ## Running it:
 
-Install [libvips](https://github.com/libvips/ruby-vips) and [Ruby](https://www.ruby-lang.org/en/). Then use Ruby's **gem** to install 'ruby-vips' and 'histogram' packages:
+Install [libvips](https://libvips.github.io/libvips/install.html) and [Ruby](https://www.ruby-lang.org/en/). Then use Ruby's **gem** to install 'ruby-vips' and 'histogram' packages:
 
 ```
 gem install histogram
