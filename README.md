@@ -13,7 +13,7 @@ gem install histogram
 gem install ruby-vips
 ```
 
-Okay? Call the program:
+Okay? Run the program:
 
 ```
 ruby ruby-vips-vari-ndvi.rb
