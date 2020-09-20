@@ -13,7 +13,7 @@ gem install histogram
 gem install ruby-vips
 ```
 
-Okay? Run the program:
+OK? Run the program:
 
 ```
 ruby ruby-vips-vari-ndvi.rb
@@ -28,3 +28,7 @@ _nir.png_ and _rgb.png_ orthophoto thumbnails will be processed and resulting _n
 
 ### NIR → NDVI
 <img src="https://github.com/dirceup/pyvips-NDVI-and-VARI/blob/master/nir.png" width="400"/> → <img src="https://github.com/dirceup/pyvips-NDVI-and-VARI/blob/master/ndvi.png" width="400"/>
+
+## TODO
+
+Explain each step from the algorithm with graphs and histograms...
