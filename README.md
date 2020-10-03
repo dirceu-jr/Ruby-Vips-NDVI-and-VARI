@@ -23,14 +23,9 @@ gem install histogram
 gem install ruby-vips
 ```
 
-## Step by step of my algorithm
+## Run
 
-I will explain how to get from not calibrated input to this result:
-
-<img src="https://github.com/dirceup/pyvips-NDVI-and-VARI/blob/master/nir.png" width="400"/> → <img src="https://github.com/dirceup/pyvips-NDVI-and-VARI/blob/master/ndvi.png" width="400"/>
-
-
-OK? Run the program:
+OK? Run the script:
 
 ```
 ruby ruby-vips-vari-ndvi.rb
