@@ -1,8 +1,18 @@
 # Ruby-Vips NDVI and VARI
 
-Applies NDVI (Normalized Difference Vegetation Index) and VARI (Visible Atmospherically Resistant Index) Vegetation Index in NIR (near-infrared) and RGB orthophotos using **[libvips](https://libvips.github.io/libvips/)** image processing library and their [Ruby binding](https://github.com/libvips/ruby-vips).
+Applies NDVI (Normalized Difference Vegetation Index) in NIR (near-infrared) orthophotos and VARI (Visible Atmospherically Resistant Index) Vegetation Index in RGB orthophotos using **[libvips](https://libvips.github.io/libvips/)** image processing library and their [Ruby binding](https://github.com/libvips/ruby-vips).
 
-It is a simplified version of my project [tiled-vegetation-indices](https://github.com/dirceup/tiled-vegetation-indices/) where I demonstrate how to compute statistics from orthophoto thumbnails then use it to apply the index to [map tiles](https://en.wikipedia.org/wiki/Tiled_web_map).
+## What is NDVI and VARI?
+
+Normalized Difference Vegetation Index and Visible Atmospherically Resistant Index are a simple graphical indicators that can be used to analyze remote sensing measurements, assessing whether or not the target being observed contains live green vegetation.
+
+The NDVI is calculated from these individual measurements as follows: `NDVI = (NIR - Red) / (NIR + Red)`
+
+And VARI = `(Green - Red) / (Green + Red - Blue)`
+
+## What is libvips?
+
+
 
 ## Running it:
 
