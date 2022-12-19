@@ -75,14 +75,14 @@ def ndvi(image, band_order)
   [alpha, index]
 end
 
-def apply_index(base, index)
+def apply_index(input_path, index)
   # load image
-  image = Vips::Image.new_from_file("./#{base}.png")
+  image = Vips::Image.new_from_file("./#{input_path}")
 
   # call index method
-  if index == 'ndvi'
+  if index == 'NDVI'
     alpha, result = ndvi(image, 'RGN')
-  elsif index == 'vari'
+  elsif index == 'VARI'
     alpha, result = vari(image, 'RGB')
   end
 
@@ -102,8 +102,7 @@ def apply_index(base, index)
   rgb = result.maplut(rdylgn_image)
 
   # save to file
-  rgb.bandjoin(alpha).write_to_file("./#{index}.png")
+  rgb.bandjoin(alpha).write_to_file("./#{index.downcase}.png")
 end
 
-apply_index('nir', 'ndvi')
-apply_index('rgb', 'vari')
+apply_index(ARGV[0], ARGV[1])
