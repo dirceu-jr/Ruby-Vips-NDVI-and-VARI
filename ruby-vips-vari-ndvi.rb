@@ -4,15 +4,10 @@ require 'histogram/array'
 # install with 'gem install ruby-vips'
 require 'ruby-vips'
 
-# it is bundled with...
-require './colormaps.rb'
-include ColorMaps
-
-
 # find min/max and histogram
 def result_histogram(result)
   flat_result = result.to_a.flatten
-  flat_result.reject! &:nan?
+  flat_result.reject!(&:nan?)
   flat_result.histogram(256)[1]
 end
 
@@ -68,6 +63,7 @@ def vari(image, band_order)
   index = (g - r) / (g + r - b)
   [alpha, index]
 end
+
 # NDVI
 def ndvi(image, band_order)
   r, g, nir, alpha = bandsplit(image, band_order)
@@ -95,14 +91,14 @@ def apply_index(input_path, index)
   max = clip_min_max[:max]
 
   # apply image manipulation algebra to 'normalize' results
-  result = ((result-min) / (max-min).to_f) * 256
+  result = ((result - min) / (max - min).to_f) * 256
 
   # apply Look-Up-Table (LUT)
-  rdylgn_image = Vips::Image.new_from_array(RdYlGn_lut).bandfold
+  rdylgn_image = Vips::Image.new_from_file('./rdylgn.png')
   rgb = result.maplut(rdylgn_image)
 
   # save to file
-  rgb.bandjoin(alpha).write_to_file("./#{index.downcase}.png")
+  rgb[0...3].bandjoin(alpha).write_to_file("./#{index.downcase}.png")
 end
 
 apply_index(ARGV[0], ARGV[1])
